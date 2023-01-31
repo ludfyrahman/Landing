@@ -18,8 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('username')->unique();
             $table->string('email')->unique();
             $table->string('password');
-            $table->enum('role', ['Super Admin', 'Owner','Pegawai']);
-            $table->enum('status', ['Aktif', 'Nonaktif']);
+            $table->enum('role', ['Super Admin', 'Admin']);
             $table->rememberToken();
             $table->timestamps();
         });
