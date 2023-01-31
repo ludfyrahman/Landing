@@ -25,10 +25,9 @@ class DashboardController extends Controller
     public function index(Request $request)
     {
         //
-        $summary = $this->service->getSummary($request);
-        // return $summary;
+        // $summary = $this->service->getSummary($request);
         $customers = Customer::orderBy('id', 'desc')->get();
-        return view('pages.backoffice.dashboard.index', compact('summary', 'customers'));
+        return view('pages.backoffice.dashboard.index', compact( 'customers'));
     }
 
     /**
