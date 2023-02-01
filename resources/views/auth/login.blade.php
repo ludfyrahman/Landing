@@ -6,7 +6,7 @@
     <div class="col-md-6 col-lg-6 col-xl-7 d-none d-md-flex bg-primary-transparent">
         <div class="row wd-100p mx-auto text-center">
             <div class="col-md-12 col-lg-12 col-xl-12 my-auto mx-auto wd-100p">
-                <img src="" class="my-auto ht-xl-80p wd-md-100p wd-xl-80p mx-auto" alt="logo">
+                <img src="" class="my-auto ht-xl-80p wd-md-100p d-none wd-xl-80p mx-auto" alt="logo">
             </div>
         </div>
     </div>
@@ -26,7 +26,7 @@
                             </div>
                             <div class="card-sigin">
                                 <div class="main-signup-header">
-                                    <h2>Selamat Data di POS Ita Solusi</h2>
+                                    <h2>Selamat Data di Backoffice SMK</h2>
                                     <h5 class="fw-semibold mb-4">Please sign in to continue.</h5>
                                     <form method="POST" action="{{ route('login') }}">
                                         @csrf

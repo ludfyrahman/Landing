@@ -15,17 +15,8 @@ class ProfilSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('profil')->insert([
-            'nama_perusahaan' => 'CV. ITA SOLUSI',
-            'logo' => '-',
-            'deskripsi' => '-',
-            'about' => '-',
-            'light_logo' => '-',
-            'address' => '-',
-            'phone' => '-',
-            'email' => '-',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
+        DB::table('school_profile')->insert([
+            'name' => 'SMK',
         ]);
     }
 }
