@@ -17,6 +17,14 @@ class ProfilSeeder extends Seeder
     {
         DB::table('school_profile')->insert([
             'name' => 'SMK',
+            'address' => 'SMK',
+            'desc' => '-',
+            'email' => '-',
+            'phone' => '0',
+            'logo' => '',
+            'intro' => '',
+            'visi' => '',
+            'misi' => '',
         ]);
     }
 }
