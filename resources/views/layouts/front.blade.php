@@ -611,7 +611,7 @@
                     <div class="col-md-6 col-xxl-3 col-xl-4">
                         <div class="widget footer-widget">
                             <div class="as-widget-about">
-                                <div class="about-logo"><a href="index.html"><img src="fe_assets/img/logo-white.svg"
+                                <div class="about-logo"><a href="index.html"><img class="d-none" src="fe_assets/img/logo-white.svg"
                                             alt="Acadu"></a></div>
                                 <p class="about-text">Continually optimize backward manufactured products whereas
                                     communities negotiate life compelling alignments</p>
@@ -675,7 +675,7 @@
                 <div class="row justify-content-between align-items-center">
                     <div class="col-lg-6">
                         <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2022 <a
-                                href="https://themeforest.net/user/angfuz_soft">Angfuzsoft</a>. All Rights Reserved.</p>
+                                href="{{url('/')}}">SMK</a>. All Rights Reserved.</p>
                     </div>
                     <div class="col-lg-6 text-end d-none d-lg-block">
                         <div class="footer-links">
