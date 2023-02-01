@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Product;
-use App\Models\ProfileCompany;
-use App\Models\Sosmed;
-use App\Models\Type;
+use App\Models\SchoolProfile;
+use App\Models\Majors;
+use App\Models\Agenda;
+use App\Models\Teachers;
+use App\Models\JobFair;
 
 class SiteController extends Controller
 {
@@ -18,12 +19,11 @@ class SiteController extends Controller
      */
     public function index()
     {
-        //
-        $products = Product::with('kategori', 'penjualan')->get();
-        $types = Type::all();
-        $social = Sosmed::all();
-        $profiles = ProfileCompany::first();
-        return view('pages.frontend.index', compact('types', 'products','social','profiles'));
+        $profiles = SchoolProfile::first();
+        $majors = Majors::all();
+        $agenda = Agenda::all();
+        $teachers = Teachers::all();
+        return view('pages.frontend.index', compact('profiles', 'agenda', 'teachers', 'majors'));
     }
 
     /**
