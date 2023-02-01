@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Absensi extends Model
+class Teachers extends Model
 {
     use HasFactory;
-    protected $table = 'absensi';
-    protected $fillable = ['pegawai_id', 'tanggal','keterangan'];
+    protected $table = 'teachers';
+    protected $fillable = ['nip', 'photo', 'name', 'phone', 'address'];
 }

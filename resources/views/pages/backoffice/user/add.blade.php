@@ -82,21 +82,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="">Status <span class="tx-danger">*</span></label>
-                                    <select name="status" class="form-control @error('status') parsley-error @enderror">
-                                        <option value="" >Pilih status</option>
-                                        <option value="Aktif" selected>Aktif</option>
-                                        <option value="Nonaktif">Nonaktif</option>
-                                    </select>
-                                    @error('status')
-                                        <ul class="parsley-errors-list filled" id="parsley-id-5">
-                                            <li class="parsley-required">{{ $message }}</li>
-                                        </ul>
-                                    @enderror
-                                </div>
-                            </div>
+                           
                         </div>
                         <div class="form-group mb-0 mt-3 justify-content-end">
                             <div>

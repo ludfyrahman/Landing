@@ -16,6 +16,7 @@ class CreateAgendaTable extends Migration
         Schema::create('agenda', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->enum('status', ['Aktif', 'Nonaktif']);
             $table->date('date');
             $table->timestamps();
         });

@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\BackOffice;
 
 use App\Http\Controllers\Controller;
-use App\Models\ProfileCompany;
+use App\Models\SchoolProfile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use Symfony\Component\Console\Input\Input;
 
-class ProfileCompanyController extends Controller
+class SchoolProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +18,7 @@ class ProfileCompanyController extends Controller
      */
     public function index()
     {
-        $data = ProfileCompany::first();
+        $data = SchoolProfile::first();
         return view('pages.backoffice.settings.profileSetting', compact('data'));
     }
 
@@ -74,34 +74,42 @@ class ProfileCompanyController extends Controller
     public function update(Request $request, $id)
     {
 
+        
         $request->validate([
-            'nama_perusahaan' => 'required',
+            'name' => 'required',
+            'email' => 'required',
+            'logo' => 'required',
+            'visi' => 'required',
+            'misi' => 'required',
+            'address' => 'required',
         ]);
-
-
         try {
             if ($request->logo) {
                 $fileType = $request->file('logo')->extension();
                 $name = Str::random(8) . '.' . $fileType;
                 $input['logo'] = Storage::putFileAs('logo', $request->file('logo'), $name);
             }
-            if ($request->light_logo) {
-                $fileType = $request->file('light_logo')->extension();
+           
+            if ($request->intro) {
+                $fileType = $request->file('intro')->extension();
                 $name = Str::random(8) . '.' . $fileType;
-                $input['light_logo'] = Storage::putFileAs('logo', $request->file('light_logo'), $name);
+                $input['intro'] = Storage::putFileAs('intro', $request->file('intro'), $name);
             }
-            $input['nama_perusahaan'] = $request->nama_perusahaan;
-            $input['deskripsi'] = $request->deskripsi ?? '-';
-            $input['address'] = $request->alamat ?? '-';
-            $input['email'] = $request->email ?? '-';
-            $input['about'] = $request->about ?? '-';
+           
+            $input['name'] = $request->name;
+            $input['email'] = $request->emai ?? '-';
             $input['phone'] = $request->phone ?? '-';
-            ProfileCompany::where('id', $id)->update($input);
+            $input['address'] = $request->address ?? '-';
+            $input['visi'] = $request->visi ?? '-';
+            $input['misi'] = $request->misi ?? '-';
+            SchoolProfile::where('id', $id)->update($input);
             return back()->with('success', 'Berhasil mengubah data');
         } catch (\Throwable $th) {
+            dd($th);
             return back()->with('failed', 'Gagal mengubah data ' . $th);
             throw $th;
         }
+        
     }
 
     /**

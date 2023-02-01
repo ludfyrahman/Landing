@@ -26,22 +26,20 @@
                     <table class="table text-md-nowrap" id="example1">
                         <thead>
                             <tr>
+                                <th class="wd-15p border-bottom-0">#</th>
                                 <th class="wd-15p border-bottom-0">Username</th>
+                                <th class="wd-15p border-bottom-0">Email</th>
                                 <th class="wd-20p border-bottom-0">Role</th>
-                                @if (Auth::user()->role == 'Super Admin')
-                                    <th class="wd-15p border-bottom-0">Status</th>
-                                @endif
                                 <th class="wd-25p border-bottom-0">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($data as $item)
                                 <tr>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->username }}</td>
+                                    <td>{{ $item->email }}</td>
                                     <td>{{ $item->role }}</td>
-                                    @if (Auth::user()->role == 'Super Admin')
-                                        <td>{{ $item->status }}</td>
-                                    @endif
                                     <td class="d-flex"><a href="{{ url('/user/' . $item->id . '/edit') }}" class="btn btn-sm btn-info me-2"> <i
                                                 class="mdi mdi-pencil"></i>
                                             Ubah</a>

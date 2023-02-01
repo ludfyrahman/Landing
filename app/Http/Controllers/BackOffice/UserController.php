@@ -16,12 +16,7 @@ class UserController extends Controller
     public function index()
     {
 
-        $data = [];
-        if (auth()->user()->role == 'Super Admin') {
-            $data = User::all();
-        } else {
-            $data = User::where('status', 'Aktif')->get();
-        }
+        $data = User::all();
 
         return view('pages.backoffice.user.index', compact('data'));
     }
@@ -49,14 +44,12 @@ class UserController extends Controller
             'username' => 'required',
             'password' => 'required',
             'role' => 'required',
-            'status' => 'required',
         ]);
 
         try {
             User::create([
                 'username' => $request->username,
                 'role' => $request->role,
-                'status' => $request->status,
                 'email' => $request->email,
                 'password' => bcrypt($request->password),
             ]);
@@ -102,13 +95,11 @@ class UserController extends Controller
         $request->validate([
             'username' => 'required',
             'role' => 'required',
-            'status' => 'required',
         ]);
         try {
             $user = ([
                 'username' => $request->username,
                 'role' => $request->role,
-                'status' => $request->status,
                 'email' => $request->email,
 
             ]);

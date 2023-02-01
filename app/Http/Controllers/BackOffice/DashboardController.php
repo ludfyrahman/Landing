@@ -4,8 +4,10 @@ namespace App\Http\Controllers\BackOffice;
 
 use App\Http\Controllers\BackOffice\Services\SummaryService;
 use App\Http\Controllers\Controller;
-use App\Models\Customer;
-use App\Models\Sale;
+use App\Models\Teachers;
+use App\Models\Majors;
+use App\Models\Agenda;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 use Auth;
@@ -26,8 +28,28 @@ class DashboardController extends Controller
     {
         //
         // $summary = $this->service->getSummary($request);
-        $customers = Customer::orderBy('id', 'desc')->get();
-        return view('pages.backoffice.dashboard.index', compact( 'customers'));
+        $summary =(object) [
+            'saleToday' => 0,
+            'saleTodayBefore' => 0,
+            'purchaseToday' => 0,
+            'purchaseTodayBefore' => 0,
+            'saleMonth' => 0,
+            'saleMonthBefore' => 0,
+            'purchaseMonth' => 0,
+            'purchaseMonthBefore' => 0,
+            'salesChart' => [],
+            'product' => 0,
+            'service' => 0,
+            'sales' => [],
+            'purchaseChart' => [],
+
+        ];
+        $customers  = [];
+        $teachers = Teachers::orderBy('id', 'desc')->get();
+        $majors = Majors::orderBy('id', 'desc')->get();
+        $agenda = Agenda::orderBy('id', 'desc')->get();
+        $users = User::orderBy('id', 'desc')->get();
+        return view('pages.backoffice.dashboard.index', compact('teachers', 'summary', 'customers', 'majors', 'agenda', 'users'));
     }
 
     /**

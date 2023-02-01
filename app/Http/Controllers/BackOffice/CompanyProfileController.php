@@ -14,7 +14,8 @@ class CompanyProfileController extends Controller
      */
     public function index()
     {
-        //
+        $data = ProfileCompany::first();
+        return view('pages.backoffice.settings.profileSetting', compact('data'));
     }
 
     /**

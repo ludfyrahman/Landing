@@ -22,6 +22,7 @@ class CreateProfileTable extends Migration
             $table->string('logo');
             $table->string('visi');
             $table->string('misi');
+            $table->string('phone');
             $table->string('intro')->nullable();/** video or photo */
             $table->timestamps();
         });

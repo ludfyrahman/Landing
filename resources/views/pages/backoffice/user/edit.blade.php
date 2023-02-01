@@ -61,9 +61,6 @@
                                     @enderror
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Role <span class="tx-danger">*</span></label>
@@ -71,9 +68,8 @@
                                         <option value="">Pilih Role</option>
                                         <option {{ $data->role == 'Super Admin' ? 'selected' : '' }} value="Super Admin">
                                             Super Admin</option>
-                                        <option {{ $data->role == 'Owner' ? 'selected' : '' }} value="Owner">Owner</option>
-                                        <option {{ $data->role == 'Pegawai' ? 'selected' : '' }} value="Pegawai">Pegawai
-                                        </option>
+                                        <option {{ $data->role == 'Admin' ? 'selected' : '' }} value="Admin">Admin</option>
+                                       
                                     </select>
 
                                     @error('role')
@@ -83,21 +79,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="">Status <span class="tx-danger">*</span></label>
-                                    <select name="status" class="form-control @error('status') parsley-error @enderror">
-                                        <option value="">Pilih status</option>
-                                        <option {{ $data->status == 'Aktif' ? 'selected' : ''}} value="Aktif">Aktif</option>
-                                        <option {{ $data->status == 'Nonaktif' ? 'selected' : ''}} value="Nonaktif">Nonaktif</option>
-                                    </select>
-                                    @error('status')
-                                        <ul class="parsley-errors-list filled" id="parsley-id-5">
-                                            <li class="parsley-required">{{ $message }}</li>
-                                        </ul>
-                                    @enderror
-                                </div>
-                            </div>
+                            
                         </div>
                         <div class="form-group mb-0 mt-3 justify-content-end">
                             <div>
