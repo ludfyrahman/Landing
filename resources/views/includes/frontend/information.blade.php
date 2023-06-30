@@ -1,117 +1,74 @@
-<!-- Start Event Area  -->
-<div class="edu-event-area eduvibe-home-two-event edu-section-gap bg-image video-gallery-overlay-area">
-    <div class="container eduvibe-animated-shape">
+<section class="bg-theme" data-bg-src="fe_assets/img/bg/bg_overlay_2.png">
+    <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="section-title text-center" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
-                    <span class="pre-title">Let’s Learn Together</span>
-                    <h3 class="title">Upcoming Educational Events</h3>
+            <div class="col-sm-6 col-xl-3 counter-card-wrap">
+                <div class="counter-card">
+                    <h2 class="counter-card_number"><span class="counter-number">3526</span>+</h2><span
+                        class="counter-card_text"><strong>Total </strong> Siswa</span>
                 </div>
             </div>
-        </div>
-        <div class="row g-5 mt--25">
-            <!-- Start Event List  -->
-            <div class="col-lg-12" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
-                <div class="edu-event event-list radius-small bg-white">
-                    <div class="inner">
-                        <div class="thumbnail">
-                            <a href="event-details.html">
-                                <img src="assets/images/event/event-01/event-01.jpg" alt="Event Images">
-                            </a>
-                        </div>
-                        <div class="content">
-                            <div class="content-left">
-                                <h5 class="title"><a href="event-details.html">Consumer Food Safety Education Conference</a></h5>
-                                <ul class="event-meta">
-                                    <li><i class="icon-calendar-2-line"></i>15th December 2022</li>
-                                    <li><i class="icon-time-line"></i>10:00 AM</li>
-                                    <li><i class="icon-map-pin-line"></i>IAC Building, New York, NY</li>
-                                </ul>
-                            </div>
-                            <div class="read-more-btn">
-                                <a class="edu-btn btn-dark" href="event-details.html">Book A Seat<i class="icon-arrow-right-line-right"></i></a>
-                            </div>
-                        </div>
-
-                    </div>
+            <div class="col-sm-6 col-xl-3 counter-card-wrap">
+                <div class="counter-card">
+                    <h2 class="counter-card_number"><span class="counter-number">{{count($majors)}}</span>+</h2><span
+                        class="counter-card_text"><strong>Program</strong> STudi</span>
                 </div>
             </div>
-            <!-- End Event List  -->
-
-            <!-- Start Event List  -->
-            <div class="col-lg-12" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">
-                <div class="edu-event event-list radius-small bg-white">
-                    <div class="inner">
-                        <div class="thumbnail">
-                            <a href="event-details.html">
-                                <img src="assets/images/event/event-01/event-02.jpg" alt="Event Images">
-                            </a>
-                        </div>
-                        <div class="content">
-                            <div class="content-left">
-                                <h5 class="title"><a href="event-details.html">Virtual Spring Part-time Jobs
-                                        Fair for Student</a></h5>
-                                <ul class="event-meta">
-                                    <li><i class="icon-calendar-2-line"></i>12th November 2022</li>
-                                    <li><i class="icon-time-line"></i>09:00 AM</li>
-                                    <li><i class="icon-map-pin-line"></i>IAC Building, New York, NY</li>
-                                </ul>
-                            </div>
-                            <div class="read-more-btn">
-                                <a class="edu-btn btn-dark" href="event-details.html">Book A Seat<i class="icon-arrow-right-line-right"></i></a>
-                            </div>
-                        </div>
-
-                    </div>
+            <div class="col-sm-6 col-xl-3 counter-card-wrap">
+                <div class="counter-card">
+                    <h2 class="counter-card_number"><span class="counter-number">{{count($teachers)}}</span>+</h2><span
+                        class="counter-card_text"><strong>Jumlah</strong> Guru</span>
                 </div>
             </div>
-            <!-- End Event List  -->
-
-            <!-- Start Event List  -->
-            <div class="col-lg-12" data-sal-delay="250" data-sal="slide-up" data-sal-duration="800">
-                <div class="edu-event event-list radius-small bg-white">
-                    <div class="inner">
-                        <div class="thumbnail">
-                            <a href="event-details.html">
-                                <img src="assets/images/event/event-01/event-03.jpg" alt="Event Images">
-                            </a>
-                        </div>
-                        <div class="content">
-                            <div class="content-left">
-                                <h5 class="title"><a href="event-details.html">Explorations of Regional
-                                        Chief Executive Network</a></h5>
-                                <ul class="event-meta">
-                                    <li><i class="icon-calendar-2-line"></i>28th Octabar 2022</li>
-                                    <li><i class="icon-time-line"></i>08:00 AM</li>
-                                    <li><i class="icon-map-pin-line"></i>IAC Building, New York, NY</li>
-                                </ul>
-                            </div>
-                            <div class="read-more-btn">
-                                <a class="edu-btn btn-dark" href="event-details.html">Book A Seat<i class="icon-arrow-right-line-right"></i></a>
-                            </div>
-                        </div>
-
-                    </div>
+            <div class="col-sm-6 col-xl-3 counter-card-wrap">
+                <div class="counter-card">
+                    <h2 class="counter-card_number"><span class="counter-number">96.22</span>+</h2><span
+                        class="counter-card_text"><strong>Jumlah</strong> Karyawan</span>
                 </div>
             </div>
-            <!-- End Event List  -->
-        </div>
-
-        <div class="shape-dot-wrapper shape-wrapper d-xl-block d-none">
-            <div class="shape-image shape-image-1">
-                <img src="assets/images/shapes/shape-03-07.png" alt="Shape Thumb" />
-            </div>
-            <div class="shape-image shape-image-2">
-                <img src="assets/images/shapes/shape-02-04.png" alt="Shape Thumb" />
-            </div>
-            <div class="shape-image shape-image-3">
-                <img src="assets/images/shapes/shape-05-02.png" alt="Shape Thumb" />
-            </div>
-            <div class="shape-image shape-image-4">
-                <img src="assets/images/shapes/shape-13-05.png" alt="Shape Thumb" />
-            </div>
-            <div class="shape shape-1"><span class="shape-dot"></span></div>
         </div>
     </div>
+</section>
+<div class="space">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-6">
+                <div class="img-box2"><img class="w-100" src="fe_assets/img/normal/about_1_2.jpg" alt="About">
+                    <div class="student-count">
+                        <h5 class="title">Total Students</h5>
+                        <div class="avater-list">
+                            <div class="avater"><img src="fe_assets/img/normal/student_1_1.png" alt="avater"></div>
+                            <div class="avater"><img src="fe_assets/img/normal/student_1_2.png" alt="avater"></div>
+                            <div class="avater"><img src="fe_assets/img/normal/student_1_3.png" alt="avater"></div>
+                            <div class="avater"><img src="fe_assets/img/normal/student_1_4.png" alt="avater"></div>
+                            <span class="count"><span class="counter-number">56</span>+</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="mb-35 mb-xl-5">
+                    <h2 class="fs-40 text-theme fw-light mb-0">What People Think</h2>
+                    <h3 class="h2">About Acadu Company</h3>
+                </div>
+                <p class="mt-n2 mb-25">Synergistically visualize alternative content before cross functional core
+                    Rapidiously administra standardized value via focused benefits. Rapidiously redefine highly
+                    efficient niche markets with plug-and-play materials professionally seize client centric
+                    solutions</p>
+                <div class="checklist style2 mb-35">
+                    <ul>
+                        <li>
+                            <h5 class="check-title">Competitive Rates</h5>
+                            <p class="check-text">Seamlessly envisioneer tactical data through services.</p>
+                        </li>
+                        <li>
+                            <h5 class="check-title">Online Certificates</h5>
+                            <p class="check-text">Seamlessly envisioneer tactical data through services.</p>
+                        </li>
+                    </ul>
+                </div><a href="about.html" class="as-btn">Learn More<i class="fas fa-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="shape-mockup jump d-none d-xxl-block" data-bottom="30%" data-right="0"><img
+            src="fe_assets/img/shape/dot_shape_2.png" alt="shapes"></div>
 </div>
-<!-- End Event Area  -->
