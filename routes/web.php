@@ -22,9 +22,11 @@ use App\Models\Voucher;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
 Route::get('/', [SiteController::class, 'index'])->name('home');
+Route::get('/profilSchool', [SiteController::class, 'profile'])->name('profileSchool');
+Route::get('/programs', [SiteController::class, 'programs'])->name('programs');
+Route::get('/teacher', [SiteController::class, 'teachers'])->name('teachers');
+Route::get('/works', [SiteController::class, 'works'])->name('works');
 Route::middleware(['auth',  'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/profil', [UserController::class, 'profile'])->name('profile');

@@ -39,13 +39,9 @@
         </div>
     </div>
 </div>
-<div class="popup-search-box d-none d-lg-block"><button class="searchClose"><i class="fal fa-times"></i></button>
-    <form action="#"><input type="text" placeholder="What are you looking for?"> <button type="submit"><i
-                class="fal fa-search"></i></button></form>
-</div>
 <div class="as-menu-wrapper">
     <div class="as-menu-area text-center"><button class="as-menu-toggle"><i class="fal fa-times"></i></button>
-        <div class="mobile-logo"><a href="index.html"><img src="{{asset('fe_assets/img/logo.svg')}}" alt="Acadu"></a></div>
+        <div class="mobile-logo"><a href="index.html"><img src="fe_assets/img/logo.svg" alt="Acadu"></a></div>
         <div class="as-mobile-menu">
             <ul>
                 <li ><a href="{{url('/')}}">Home</a></li>
@@ -137,10 +133,10 @@
                                     <nav class="main-menu d-none d-lg-inline-block">
                                         <ul>
                                             <li><a href="{{url('/')}}">Beranda</a></li>
-                                            <li><a href="{{url('/')}}">Profil</a></li>
-                                            <li><a href="{{url('/')}}">Program Keahlian</a></li>
-                                            <li><a href="{{url('/')}}">Guru</a></li>
-                                            <li><a href="{{url('/')}}">Bursa Kerja</a></li>
+                                            <li><a href="{{route('profileSchool')}}">Profil</a></li>
+                                            <li><a href="{{route('programs')}}">Program Keahlian</a></li>
+                                            <li><a href="{{route('teachers')}}">Guru</a></li>
+                                            <li><a href="{{route('works')}}">Bursa Kerja</a></li>
                                             <li><a href="{{url('/')}}">Blog</a></li>
 
                                         </ul>
@@ -148,12 +144,8 @@
                                             class="far fa-bars"></i></button>
                                 </div>
                                 <div class="col-auto d-none d-xxl-block">
-                                    <div class="header-button"><button type="button"
-                                            class="icon-btn searchBoxToggler"><i class="far fa-search"></i></button>
-                                        <a href="wishlist.html" class="icon-btn"><i class="far fa-heart"></i> <span
-                                                class="badge">3</span> </a><a href="#"
-                                            class="icon-btn sideMenuToggler"><i class="far fa-cart-shopping"></i>
-                                            <span class="badge bg-theme2">5</span> </a><a href="contact.html"
+                                    <div class="header-button">
+                                        <a href="contact.html"
                                             class="as-btn ml-25">Apply Now<i
                                                 class="fas fa-arrow-right ms-2"></i></a></div>
                                 </div>

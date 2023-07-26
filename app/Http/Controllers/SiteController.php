@@ -26,69 +26,24 @@ class SiteController extends Controller
         return view('pages.frontend.index', compact('profiles', 'agenda', 'teachers', 'majors'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function profile()
     {
-        //
+        $profiles = SchoolProfile::first();
+        return view('pages.frontend.profile.index', compact('profiles'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function teachers(){
+        $teachers = Teachers::all();
+        return view('pages.frontend.teachers.index', compact('teachers'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+    public function programs(){
+        $majors = Majors::all();
+        return view('pages.frontend.programs.index', compact('majors'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    public function works(){
+        $jobfair = JobFair::all();
+        return view('pages.frontend.works.index', compact('jobfair'));
     }
 }
