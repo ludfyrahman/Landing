@@ -16,15 +16,17 @@ class ProfilSeeder extends Seeder
     public function run()
     {
         DB::table('school_profile')->insert([
-            'name' => 'SMK',
-            'address' => 'SMK',
+            'name' => 'SMK PGRI 2 BONDOWOSO',
+            'address' => 'Jl. Saliwiryo Pranowo Gg. TamanNo. 25',
             'description' => '-',
-            'email' => '-',
+            'email' => 'smkpgri2.bondowoso@gmail.com',
+            'headmaster' => 'IFROTUL LATIF, S.T',
             'facebook' => '-',
             'instagram' => '-',
             'twitter' => '-',
             'phone' => '0',
             'logo' => '',
+            'white_logo' => '',
             'intro' => '',
             'visi' => '',
             'misi' => '',

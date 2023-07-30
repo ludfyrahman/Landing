@@ -33,6 +33,7 @@ Route::middleware(['auth',  'verified'])->group(function () {
     Route::get('/profil', [UserController::class, 'profile'])->name('profile');
     Route::post('/profil', [UserController::class, 'updateProfile']);
     Route::resource('user', UserController::class);
+    Route::resource('gallery', UserController::class);
     Route::resource('teachers', TeachersController::class);
     Route::resource('jobFair', JobFairController::class);
     Route::resource('agenda', AgendaController::class);

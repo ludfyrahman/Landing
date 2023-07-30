@@ -20,6 +20,9 @@ class CreateProfileTable extends Migration
             $table->string('description');
             $table->string('email');
             $table->string('logo');
+            $table->string('headmaster_photo')->nullable();//foto
+            $table->string('headmaster')->nullable();//nama
+            $table->string('opening_speech_headmaster')->nullable();//sambutan
             $table->string('visi');
             $table->string('misi');
             $table->string('phone');

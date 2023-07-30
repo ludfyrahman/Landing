@@ -46,6 +46,32 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
+                                    <label for="">Intro Video <span class="tx-danger">*</span></label>
+                                    <input type="url" class="form-control" name="intro" data-height="200"
+                                        value="{{ asset($data->intro) }}" />
+                                    @error('intro')
+                                        <ul class="parsley-errors-list filled" id="parsley-id-5">
+                                            <li class="parsley-required">{{ $message }}</li>
+                                        </ul>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Nama Kepala Sekolah <span class="tx-danger">*</span></label>
+                                    <input type="text" id="headmaster" headmaster="headmaster"
+                                        class="form-control @error('headmaster') parsley-error @enderror"
+                                        placeholder="Nama Perusahaan" value="{{ $data->headmaster }}">
+                                    @error('headmaster')
+                                        <ul class="parsley-errors-list filled" id="parsley-id-5">
+                                            <li class="parsley-required">{{ $message }}</li>
+                                        </ul>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
                                     <label for="">Email Sekolah <span class="tx-danger">*</span></label>
                                     <input type="text" id="email" name="email"
                                         class="form-control @error('email') parsley-error @enderror"
@@ -85,10 +111,23 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">Intro Video <span class="tx-danger">*</span></label>
-                                    <input type="url" class="form-control" name="intro" data-height="200"
-                                        value="{{ asset($data->intro) }}" />
-                                    @error('intro')
+                                    <label for="">Foto Kepala Sekolah<span class="tx-danger">*</span></label>
+                                    <input type="file" class="dropify" name="headmaster_photo" data-height="200"
+                                        data-default-file="{{ asset($data->headmaster_photo) }}" />
+                                    @error('headmaster_photo')
+                                        <ul class="parsley-errors-list filled" id="parsley-id-5">
+                                            <li class="parsley-required">{{ $message }}</li>
+                                        </ul>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Sambutan Kepala Sekolah <span class="tx-danger">*</span></label>
+                                    <textarea rows="5" type="text" id="opening_speech_headmaster" opening_speech_headmaster="opening_speech_headmaster"
+                                        class="form-control @error('opening_speech_headmaster') parsley-error @enderror"
+                                        placeholder="Nama Perusahaan">{{ $data->opening_speech_headmaster }}</textarea>
+                                    @error('opening_speech_headmaster')
                                         <ul class="parsley-errors-list filled" id="parsley-id-5">
                                             <li class="parsley-required">{{ $message }}</li>
                                         </ul>
@@ -115,6 +154,42 @@
                                         rows="5"> {{ $data->misi }}</textarea>
 
                                     @error('misi')
+                                        <ul class="parsley-errors-list filled" id="parsley-id-5">
+                                            <li class="parsley-required">{{ $message }}</li>
+                                        </ul>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Facebook <span class="tx-danger">*</span></label>
+                                    <input type="text" class="form-control" name="facebook" data-height="200"
+                                        value="{{ asset($data->facebook) }}" />
+                                    @error('facebook')
+                                        <ul class="parsley-errors-list filled" id="parsley-id-5">
+                                            <li class="parsley-required">{{ $message }}</li>
+                                        </ul>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Instagram <span class="tx-danger">*</span></label>
+                                    <input type="text" class="form-control" name="instagram" data-height="200"
+                                        value="{{ asset($data->instagram) }}" />
+                                    @error('instagram')
+                                        <ul class="parsley-errors-list filled" id="parsley-id-5">
+                                            <li class="parsley-required">{{ $message }}</li>
+                                        </ul>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Twitter <span class="tx-danger">*</span></label>
+                                    <input type="text" class="form-control" name="twitter" data-height="200"
+                                        value="{{ asset($data->twitter) }}" />
+                                    @error('twitter')
                                         <ul class="parsley-errors-list filled" id="parsley-id-5">
                                             <li class="parsley-required">{{ $message }}</li>
                                         </ul>
