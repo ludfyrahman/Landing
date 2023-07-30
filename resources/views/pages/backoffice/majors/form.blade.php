@@ -65,13 +65,14 @@
                                     @enderror
                                 </div>
                             </div>
-                           
+
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Video <span class="tx-danger">*</span></label>
-                                    <input type="file" name="video"
-                                        class="form-control @error('video') parsley-error @enderror" placeholder="video"
+                                    <input type="link" name="video"
+                                        class="form-control @error('video') parsley-error @enderror" placeholder="https://www.example.com"
                                         value="{{ $data->video == '' ? old('video') : $data->video }}">
+                                        <i><span>*</span>Gunakan format http://.www.example.com</i>
                                     @error('video')
                                         <ul class="parsley-errors-list filled" id="parsley-id-5">
                                             <li class="parsley-required">{{ $message }}</li>
@@ -82,15 +83,15 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Deskripsi <span class="tx-danger">*</span></label>
-                                    <textarea name="desc" class="form-control @error('desc') parsley-error @enderror" rows="5">{{ $data->desc }}</textarea>
-                                    @error('desc')
+                                    <textarea name="description" class="form-control @error('description') parsley-error @enderror" rows="5">{{ $data->description == '' ? old('description') : $data->description }}</textarea>
+                                    @error('description')
                                         <ul class="parsley-errors-list filled" id="parsley-id-5">
                                             <li class="parsley-required">{{ $message }}</li>
                                         </ul>
                                     @enderror
                                 </div>
                             </div>
-                           
+
 
 
                         </div>

@@ -29,6 +29,7 @@
                                 <th class="wd-15p border-bottom-0">No</th>
                                 <th class="wd-20p border-bottom-0">Agenda</th>
                                 <th class="wd-20p border-bottom-0">Tanggal</th>
+                                <th class="wd-20p border-bottom-0">Lokasi</th>
                                 <th class="wd-20p border-bottom-0">Status</th>
                                 <th class="wd-25p border-bottom-0">Aksi</th>
                             </tr>
@@ -38,7 +39,8 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->name }}</td>
-                                    <td>{{ $item->date }}</td>
+                                    <td>{{ Carbon\Carbon::parse($item->start_date)->format('d / M / Y') }} - {{Carbon\Carbon::parse($item->end_date)->format('d / M / Y')}}</td>
+                                    <td>{{$item->location}}</td>
                                     <td><span class="badge bg-primary">{{ $item->status }}</span></td>
                                     <td class="d-flex"><a href="{{ route('agenda.edit', $item->id)}}" class="btn btn-sm btn-info me-2"> <i class="mdi mdi-pencil"></i>
                                             Ubah</a>

@@ -70,7 +70,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            
+
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Logo <span class="tx-danger">*</span></label>
@@ -86,8 +86,8 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Intro Video <span class="tx-danger">*</span></label>
-                                    <input type="file" class="dropify" name="intro" data-height="200"
-                                        data-default-file="{{ asset($data->intro) }}" />
+                                    <input type="url" class="form-control" name="intro" data-height="200"
+                                        value="{{ asset($data->intro) }}" />
                                     @error('intro')
                                         <ul class="parsley-errors-list filled" id="parsley-id-5">
                                             <li class="parsley-required">{{ $message }}</li>

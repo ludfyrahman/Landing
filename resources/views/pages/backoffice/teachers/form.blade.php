@@ -67,9 +67,12 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">Alamat <span class="tx-danger">*</span></label>
-                                    <textarea name="address" class="form-control @error('address') parsley-error @enderror" rows="5">{{ $data->address }}</textarea>
-                                    @error('address')
+                                    <label for="">Foto </label>
+                                    @if ($data->type != 'create')
+                                    <a href="{{ url('storage/teachers/'.$data->photo) }}">Lihat Foto Guru</a>
+                                    @endif
+                                    <input type="file" class="form-control @error('photo') parsley-error @enderror" name='photo'>
+                                    @error('photo')
                                         <ul class="parsley-errors-list filled" id="parsley-id-5">
                                             <li class="parsley-required">{{ $message }}</li>
                                         </ul>
@@ -78,12 +81,9 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">Foto </label>
-                                    @if ($data->type != 'create')
-                                    <a href="{{ $data->photo }}">Lihat Foto Produk</a>
-                                    @endif
-                                    <input type="file" class="form-control @error('photo') parsley-error @enderror" name='photo'>
-                                    @error('photo')
+                                    <label for="">Alamat <span class="tx-danger">*</span></label>
+                                    <textarea name="address" class="form-control @error('address') parsley-error @enderror" rows="5">{{ $data->address }}</textarea>
+                                    @error('address')
                                         <ul class="parsley-errors-list filled" id="parsley-id-5">
                                             <li class="parsley-required">{{ $message }}</li>
                                         </ul>

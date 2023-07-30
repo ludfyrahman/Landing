@@ -17,12 +17,15 @@ class CreateProfileTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('address');
-            $table->string('desc');
+            $table->string('description');
             $table->string('email');
             $table->string('logo');
             $table->string('visi');
             $table->string('misi');
             $table->string('phone');
+            $table->string('facebook');
+            $table->string('twitter');
+            $table->string('instagram');
             $table->string('intro')->nullable();/** video or photo */
             $table->timestamps();
         });

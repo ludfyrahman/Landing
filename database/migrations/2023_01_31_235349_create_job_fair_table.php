@@ -16,9 +16,12 @@ class CreateJobFairTable extends Migration
         Schema::create('job_fair', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->enum('status', ['Aktif', 'Nonaktif']);
+            $table->string('location');
+            $table->string('description');
             $table->string('photo');
-            $table->string('desc');
-            $table->string('link');
+            $table->dateTime('start_date');
+            $table->dateTime('end_date');
             $table->timestamps();
         });
     }

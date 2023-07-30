@@ -1,5 +1,5 @@
 # POS_ITA_SOLUSI
-# Instalasi Aplikasi POS ITA SOLUSI
+# Instalasi Aplikasi LANDING PAGE
 
 ## Persyaratan Instalasi
 - Composer

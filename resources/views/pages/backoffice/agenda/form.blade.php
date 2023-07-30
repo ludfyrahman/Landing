@@ -40,11 +40,50 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">Tanggal <span class="tx-danger">*</span></label>
-                                    <input type="date" name="date"
-                                        class="form-control @error('date') parsley-error @enderror"
-                                        placeholder="Tanggal" value="{{$data->date}}">
-                                    @error('date')
+                                    <label for="">Lokasi <span class="tx-danger">*</span></label>
+                                    <input type="text" name="location"
+                                        class="form-control @error('location') parsley-error @enderror"
+                                        placeholder="Lokasi" value="{{$data->location}}">
+                                    @error('location')
+                                        <ul class="parsley-errors-list filled" id="parsley-id-5">
+                                            <li class="parsley-required">{{ $message }}</li>
+                                        </ul>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Deskripsi <span class="tx-danger">*</span></label>
+                                    <textarea type="text" name="description"
+                                        class="form-control @error('description') parsley-error @enderror"
+                                        placeholder="Lokasi" >{{$data->description}}</textarea>
+                                    @error('description')
+                                        <ul class="parsley-errors-list filled" id="parsley-id-5">
+                                            <li class="parsley-required">{{ $message }}</li>
+                                        </ul>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Tanggal Mulai<span class="tx-danger">*</span></label>
+                                    <input type="date" name="start_date"
+                                        class="form-control @error('start_date') parsley-error @enderror"
+                                        placeholder="Tanggal" value="{{$data->start_date}}">
+                                    @error('start_date')
+                                        <ul class="parsley-errors-list filled" id="parsley-id-5">
+                                            <li class="parsley-required">{{ $message }}</li>
+                                        </ul>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Tanggal Berakhir<span class="tx-danger">*</span></label>
+                                    <input type="date" name="end_date"
+                                        class="form-control @error('end_date') parsley-error @enderror"
+                                        placeholder="Tanggal" value="{{$data->end_date}}">
+                                    @error('end_date')
                                         <ul class="parsley-errors-list filled" id="parsley-id-5">
                                             <li class="parsley-required">{{ $message }}</li>
                                         </ul>

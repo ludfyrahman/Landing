@@ -14,7 +14,7 @@ class AgendaController extends Controller
     public function index()
     {
         $data = Agenda::all();
-        $title = 'List Data Jurusan / Program Studi';
+        $title = 'List Data Agenda';
         return view('pages.backoffice.agenda.index', compact('data', 'title'));
     }
 
@@ -26,12 +26,15 @@ class AgendaController extends Controller
     public function create()
     {
         $data = (object)[
-            'name'      => '',
-            'date'   => '',
-            'status'   => '',
-            'type' => 'create'
+            'name'          => '',
+            'location'      => '',
+            'description'   => '',
+            'start_date'    => '',
+            'end_date'      => '',
+            'status'        => '',
+            'type'          => 'create'
         ];
-        $title = 'Tambah Data Jurusan / Program Studi';
+        $title = 'Tambah Data Agenda';
         return view('pages.backoffice.agenda.form', compact('data', 'title'));
     }
 
@@ -44,15 +47,21 @@ class AgendaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'date' => 'required',
-            'status' => 'required',
+            'name'          => 'required',
+            'location'      => 'required',
+            'description'   => 'required',
+            'start_date'    => 'required|date_format:Y-m-d|before_or_equal:end_date',
+            'end_date'      => 'required|date_format:Y-m-d|after_or_equal:start_date',
+            'status'        => 'required',
         ]);
         try {
             Agenda::create([
-                'name'      => $request->name,
-                'date'   => $request->date,
-                'status'   => $request->status,
+                'name'       => $request->name,
+                'location'   => $request->location,
+                'description'=> $request->description,
+                'start_date' => $request->start_date,
+                'end_date'   => $request->end_date,
+                'status'     => $request->status,
             ]);
             return redirect('agenda')->with('success', 'Berhasil menambah data!');
         } catch (\Throwable $th) {
@@ -80,7 +89,7 @@ class AgendaController extends Controller
     public function edit($id)
     {
         $data = Agenda::where('id', $id)->first();
-        $title = 'Edit data Jurusan / Program Studi';
+        $title = 'Edit Data Agenda';
         return view('pages.backoffice.agenda.form', compact('data', 'title'));
     }
 
@@ -94,16 +103,21 @@ class AgendaController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required',
-            'date' => 'required',
-            'status' => 'required',
+            'name'          => 'required',
+            'location'      => 'required',
+            'description'   => 'required',
+            'start_date'    => 'required',
+            'end_date'      => 'required',
+            'status'        => 'required',
         ]);
         try {
             Agenda::find($id)->update([
                 'name'      => $request->name,
-                'date'    => $request->date,
+                'location'   => $request->location,
+                'description'=> $request->description,
+                'start_date' => $request->start_date,
+                'end_date'   => $request->end_date,
                 'status'    => $request->status,
-                
             ]);
             return redirect('agenda')->with('success', 'Berhasil mengubah data!');
         } catch (\Throwable $th) {

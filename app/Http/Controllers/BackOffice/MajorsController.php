@@ -44,11 +44,11 @@ class MajorsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'akronim' => 'required',
-            'logo'     => 'nullable|image|mimes:jpeg,jpg,png,gif',
-            'video'     => 'nullable|video|mimes:mp4,3gp,mkv',
-            'desc' => 'required',
+            'name'      => 'required',
+            'akronim'   => 'required',
+            'logo'      => 'nullable|image|mimes:jpeg,jpg,png,gif',
+            'video'     => 'nullable|url',
+            'desc'      => 'required',
         ]);
         try {
             $logo = null;
@@ -57,19 +57,12 @@ class MajorsController extends Controller
                 $file->storeAs('public/majors/', $file->hashName());
                 $logo      = $file->hashName();
             }
-
-            $video = null;
-            if($request->video != null){
-                $file = $request->file('video');
-                $file->storeAs('public/majors/', $file->hashName());
-                $video      = $file->hashName();
-            }
             Majors::create([
                 'name'      => $request->name,
                 'akronim'   => $request->akronim,
                 'desc'    => $request->desc,
                 'logo'    => $logo,
-                'video'    => $video,
+                'video'    => $request->video,
             ]);
             return redirect('majors')->with('success', 'Berhasil menambah data!');
         } catch (\Throwable $th) {
@@ -126,18 +119,13 @@ class MajorsController extends Controller
                 $logo      = $file->hashName();
             }
 
-            $video = null;
-            if($request->video != null){
-                $file = $request->file('video');
-                $file->storeAs('public/majors/', $file->hashName());
-                $video      = $file->hashName();
-            }
+
             Majors::find($id)->update([
                 'name'      => $request->name,
                 'akronim'   => $request->akronim,
-                'desc'    => $request->desc,
-                'logo'    => $logo,
-                'video'    => $video,
+                'desc'      => $request->desc,
+                'logo'      => $logo,
+                'video'     => $request->video,
             ]);
             return redirect('majors')->with('success', 'Berhasil mengubah data!');
         } catch (\Throwable $th) {

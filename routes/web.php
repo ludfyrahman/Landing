@@ -7,6 +7,7 @@ use App\Http\Controllers\BackOffice\DashboardController;
 use App\Http\Controllers\BackOffice\UserController;
 use App\Http\Controllers\BackOffice\TeachersController;
 use App\Http\Controllers\BackOffice\AgendaController;
+use App\Http\Controllers\BackOffice\JobFairController;
 use App\Http\Controllers\BackOffice\MajorsController;
 use App\Http\Controllers\BackOffice\SchoolProfileController;
 use App\Http\Controllers\SiteController;
@@ -33,6 +34,7 @@ Route::middleware(['auth',  'verified'])->group(function () {
     Route::post('/profil', [UserController::class, 'updateProfile']);
     Route::resource('user', UserController::class);
     Route::resource('teachers', TeachersController::class);
+    Route::resource('jobFair', JobFairController::class);
     Route::resource('agenda', AgendaController::class);
     Route::resource('majors', MajorsController::class);
     Route::resource('profile', SchoolProfileController::class);

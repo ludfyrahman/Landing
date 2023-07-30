@@ -21,40 +21,23 @@
                 </div>
                 <div class="col-md-6 col-xl-auto">
                     <div class="widget widget_nav_menu footer-widget">
-                        <h3 class="widget_title">Quick link</h3>
+                        <h3 class="widget_title">Site Map</h3>
                         <div class="menu-all-pages-container">
                             <ul class="menu">
-                                <li><a href="team.html">Life Coach</a></li>
-                                <li><a href="team.html">Business Coach</a></li>
-                                <li><a href="team.html">Health Coach</a></li>
-                                <li><a href="course.html">Development</a></li>
-                                <li><a href="course.html">Web Design</a></li>
-                                <li><a href="course.html">SEO Optimize</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-auto">
-                    <div class="widget widget_nav_menu footer-widget">
-                        <h3 class="widget_title">Resources</h3>
-                        <div class="menu-all-pages-container">
-                            <ul class="menu">
-                                <li><a href="team.html">Community</a></li>
-                                <li><a href="contact.html">Support</a></li>
-                                <li><a href="course.html">Video Guides</a></li>
-                                <li><a href="about.html">Documentation</a></li>
-                                <li><a href="course.html">Security</a></li>
-                                <li><a href="course.html">Template</a></li>
+                                <li><a href="{{url('/')}}">Beranda</a></li>
+                                <li><a href="{{route('profileSchool')}}">Profil</a></li>
+                                <li><a href="{{route('programs')}}">Program Keahlian</a></li>
+                                <li><a href="{{route('teachers')}}">Guru</a></li>
+                                <li><a href="{{route('works')}}">Bursa Kerja</a></li>
+                                <li><a href="{{url('/')}}">Blog</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-xl-3">
                     <div class="widget footer-widget">
-                        <h3 class="widget_title">Get in touch!</h3>
+                        <h3 class="widget_title">Lokasi Sekolah</h3>
                         <form class="newsletter-widget">
-                            <p class="footer-text">Fusce varius, dolor tempor interdum tristiquei bibendum service
-                                life.</p>
                             <div class="form-group"><input class="form-control" type="email"
                                     placeholder="Enter Email" required=""> <i class="fal fa-envelope"></i></div>
                             <button type="submit" class="as-btn style3 shadow-none">Subscribe</button>

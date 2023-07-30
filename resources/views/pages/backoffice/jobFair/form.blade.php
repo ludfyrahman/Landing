@@ -19,7 +19,7 @@
 
                 <div class="card-body pt-0">
                     <form class="form-horizontal"
-                        action="{{ $data->type == 'create' ? route('sosmed.store') : route('sosmed.update', $data->id) }}"
+                        action="{{ $data->type == 'create' ? route('jobFair.store') : route('jobFair.update', $data->id) }}"
                         method="POST" enctype="multipart/form-data" data-parsley-validate="">
                         @csrf
                         @if ($data->type != 'create')
@@ -28,12 +28,12 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">Nama Akun<span class="tx-danger">*</span></label>
-                                    <input type="text" name="nama_akun"
-                                        class="form-control @error('nama_akun') parsley-error @enderror"
-                                        placeholder="Nama Akun"
-                                        value="{{ $data->nama_akun == '' ? old('nama_akun') : $data->nama_akun }}">
-                                    @error('nama_akun')
+                                    <label for="">Nama Bursa<span class="tx-danger">*</span></label>
+                                    <input type="text" name="name"
+                                        class="form-control @error('name') parsley-error @enderror"
+                                        placeholder="Nama Bursa"
+                                        value="{{ $data->name == '' ? old('name') : $data->name }}">
+                                    @error('name')
                                         <ul class="parsley-errors-list filled" id="parsley-id-5">
                                             <li class="parsley-required">{{ $message }}</li>
                                         </ul>
@@ -42,12 +42,26 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">Platform <span class="tx-danger">*</span></label>
-                                    <input type="text" name="platform"
-                                        class="form-control @error('platform') parsley-error @enderror"
-                                        placeholder="platform"
-                                        value="{{ $data->platform == '' ? old('platform') : $data->platform }}">
-                                    @error('platform')
+                                    <label for="">Deskripsi<span class="tx-danger">*</span></label>
+                                    <textarea type="text" name="description"
+                                        class="form-control @error('description') parsley-error @enderror"
+                                        placeholder="Nama Bursa"
+                                        >{{ $data->description == '' ? old('description') : $data->description }}</textarea>
+                                    @error('description')
+                                        <ul class="parsley-errors-list filled" id="parsley-id-5">
+                                            <li class="parsley-required">{{ $message }}</li>
+                                        </ul>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Photo<span class="tx-danger">*</span></label>
+                                    <input type="file" name="photo"
+                                        class="form-control @error('photo') parsley-error @enderror"
+                                        placeholder="Photo"
+                                        value="{{ $data->photo == '' ? old('photo') : $data->photo }}">
+                                    @error('photo')
                                         <ul class="parsley-errors-list filled" id="parsley-id-5">
                                             <li class="parsley-required">{{ $message }}</li>
                                         </ul>
@@ -57,7 +71,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Link <span class="tx-danger">*</span></label>
-                                    <input type="text" name="link"
+                                    <input type="link" name="link"
                                         class="form-control @error('link') parsley-error @enderror" placeholder="https://www.example.com"
                                         value="{{ $data->link == '' ? old('link') : $data->link }}">
                                         <i><span>*</span>Gunakan format http://.www.example.com</i>
@@ -68,32 +82,12 @@
                                     @enderror
                                 </div>
                             </div>
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="">Status <span class="tx-danger">*</span></label>
-
-                                    @php $status = $data->status == '' ? old('status') : $data->status; @endphp
-                                    <select name="status" id="" class="form-control" required>
-                                        <option value="">Pilih Status</option>
-                                        <option {{ $status == 'Aktif' ? 'selected' : '' }} value="Aktif">Aktif</option>
-                                        <option {{ $status == 'Nonaktif' ? 'selected' : '' }} value="Nonaktif">Nonaktif
-                                        </option>
-                                    </select>
-                                    @error('status')
-                                        <ul class="parsley-errors-list filled" id="parsley-id-5">
-                                            <li class="parsley-required">{{ $message }}</li>
-                                        </ul>
-                                    @enderror
-                                </div>
-                            </div>
-
                         </div>
                         <div class="form-group mb-0 mt-3 justify-content-end">
                             <div>
                                 <button type="submit" class="btn btn-primary">Simpan</button>
                                 <button type="reset" class="btn btn-secondary">Batal</button>
-                                <a href="{{ route('sosmed.index') }}" class="btn btn-info">Kembali</a>
+                                <a href="{{ route('jobFair.index') }}" class="btn btn-info">Kembali</a>
                             </div>
                         </div>
                     </form>

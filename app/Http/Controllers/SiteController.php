@@ -21,15 +21,17 @@ class SiteController extends Controller
     {
         $profiles = SchoolProfile::first();
         $majors = Majors::all();
-        $agenda = Agenda::all();
+        $agenda = Agenda::limit(4)->get();
         $teachers = Teachers::all();
-        return view('pages.frontend.index', compact('profiles', 'agenda', 'teachers', 'majors'));
+        $title = 'HomePage | SMK';
+        return view('pages.frontend.index', compact('profiles', 'agenda', 'teachers', 'majors', 'title'));
     }
 
     public function profile()
     {
         $profiles = SchoolProfile::first();
-        return view('pages.frontend.profile.index', compact('profiles'));
+        $title = 'Profil | SMK';
+        return view('pages.frontend.profile.index', compact('profiles', 'title'));
     }
 
     public function teachers(){

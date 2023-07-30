@@ -19,7 +19,7 @@ class CreateMajorsTable extends Migration
             $table->string('akronim');
             $table->string('logo');
             $table->string('video')->nullable();
-            $table->string('desc');
+            $table->string('description');
             $table->timestamps();
         });
     }

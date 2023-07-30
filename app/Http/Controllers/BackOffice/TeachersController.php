@@ -64,7 +64,7 @@ class TeachersController extends Controller
                 'nip'   => $request->nip,
                 'address'    => $request->address,
                 'phone'    => $request->phone,
-                'foto'    => $foto,
+                'photo'    => $foto,
             ]);
             return redirect('teachers')->with('success', 'Berhasil menambah data!');
         } catch (\Throwable $th) {
@@ -92,7 +92,6 @@ class TeachersController extends Controller
     public function edit($id)
     {
         $data = Teachers::where('id', $id)->first();
-
         $title = 'Edit data guru';
         return view('pages.backoffice.teachers.form', compact('data', 'title'));
     }
@@ -126,7 +125,7 @@ class TeachersController extends Controller
                 'nip'   => $request->nip,
                 'address'    => $request->address,
                 'phone'    => $request->phone,
-                'foto'    => $foto,
+                'photo'    => $foto,
             ]);
             return redirect('teachers')->with('success', 'Berhasil mengubah data!');
         } catch (\Throwable $th) {

@@ -39,9 +39,9 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->nip }}</td>
                                     <td>{{ $item->name }}</td>
-                                    <td>{{ $item->alamat }}</td>
+                                    <td>{{ $item->address }}</td>
                                     <td>{{ $item->phone }}</td>
-                                    
+
                                     <td class="d-flex">
                                         <!-- <a href="{{ route('teachers.show', $item->id)}}" class="btn btn-sm btn-info me-2"> <i class="mdi mdi-book"></i>Detail</a> -->
                                         <a href="{{ route('teachers.edit', $item->id)}}" class="btn btn-sm btn-info me-2"> <i class="mdi mdi-pencil"></i>

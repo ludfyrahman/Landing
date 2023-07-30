@@ -17,6 +17,8 @@ class CreateAgendaTable extends Migration
             $table->id();
             $table->string('name');
             $table->enum('status', ['Aktif', 'Nonaktif']);
+            $table->string('location');
+            $table->string('description');
             $table->date('date');
             $table->timestamps();
         });

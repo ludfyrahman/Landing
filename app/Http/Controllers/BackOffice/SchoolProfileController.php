@@ -74,13 +74,13 @@ class SchoolProfileController extends Controller
     public function update(Request $request, $id)
     {
 
-        
         $request->validate([
             'name' => 'required',
             'email' => 'required',
-            'logo' => 'required',
+            'logo' => 'nullable|image|mimes:jpeg,jpg,png,gif',
             'visi' => 'required',
             'misi' => 'required',
+            'intro' => 'required|url',
             'address' => 'required',
         ]);
         try {
@@ -89,14 +89,9 @@ class SchoolProfileController extends Controller
                 $name = Str::random(8) . '.' . $fileType;
                 $input['logo'] = Storage::putFileAs('logo', $request->file('logo'), $name);
             }
-           
-            if ($request->intro) {
-                $fileType = $request->file('intro')->extension();
-                $name = Str::random(8) . '.' . $fileType;
-                $input['intro'] = Storage::putFileAs('intro', $request->file('intro'), $name);
-            }
-           
+
             $input['name'] = $request->name;
+            $input['intro'] = $request->intro;
             $input['email'] = $request->emai ?? '-';
             $input['phone'] = $request->phone ?? '-';
             $input['address'] = $request->address ?? '-';
@@ -105,11 +100,10 @@ class SchoolProfileController extends Controller
             SchoolProfile::where('id', $id)->update($input);
             return back()->with('success', 'Berhasil mengubah data');
         } catch (\Throwable $th) {
-            dd($th);
-            return back()->with('failed', 'Gagal mengubah data ' . $th);
+            return back()->with('failed', 'Gagal mengubah data ' . $th->getMessage());
             throw $th;
         }
-        
+
     }
 
     /**

@@ -3,7 +3,7 @@
         <div class="row align-items-center">
             <div class="col-xl-6">
                 <div class="img-box1"><img class="w-100" src="fe_assets/img/normal/about_1_1.png" alt="About">
-                    <div class="counter-box">
+                    <div class="counter-box d-none">
                         <h3 class="counter-title"><span class="counter-number">256</span>+</h3><span
                             class="counter-text">Crashed Courses</span>
                     </div>
