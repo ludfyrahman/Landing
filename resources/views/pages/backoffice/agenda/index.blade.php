@@ -39,7 +39,7 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->name }}</td>
-                                    <td>{{ Carbon\Carbon::parse($item->start_date)->format('d / M / Y') }} - {{Carbon\Carbon::parse($item->end_date)->format('d / M / Y')}}</td>
+                                    <td>{{ Carbon\Carbon::parse($item->date)->format('d / M / Y') }}</td>
                                     <td>{{$item->location}}</td>
                                     <td><span class="badge bg-primary">{{ $item->status }}</span></td>
                                     <td class="d-flex"><a href="{{ route('agenda.edit', $item->id)}}" class="btn btn-sm btn-info me-2"> <i class="mdi mdi-pencil"></i>

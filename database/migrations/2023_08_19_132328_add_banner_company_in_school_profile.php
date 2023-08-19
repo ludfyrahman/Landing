@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGallleryTable extends Migration
+class AddBannerCompanyInSchoolProfile extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateGallleryTable extends Migration
      */
     public function up()
     {
-        Schema::create('gallery', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('photo');
-            $table->timestamps();
+        Schema::table('school_profile', function (Blueprint $table) {
+            //
+            $table->string('banner')->after('logo')->nullable();
         });
     }
 
@@ -28,6 +26,9 @@ class CreateGallleryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gallery');
+        Schema::table('school_profile', function (Blueprint $table) {
+            //
+            $table->dropColumn('banner');
+        });
     }
 }

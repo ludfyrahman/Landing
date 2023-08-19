@@ -5,9 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Agenda extends Model
+class Gallery extends Model
 {
     use HasFactory;
-    protected $table = 'agenda';
-    protected $fillable = ['name', 'location','description','date', 'status'];
+    protected $table = 'gallery';
+    protected $fillable = [
+        'name',
+        'photo',
+    ];
+
+
 }

@@ -112,9 +112,21 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Foto Kepala Sekolah<span class="tx-danger">*</span></label>
-                                    <input type="file" class="dropify" name="headmaster_photo" data-height="200"
+                                    <input type="file" accept="image/png, image/gif, image/jpeg"  class="dropify" name="banner" data-height="200"
                                         data-default-file="{{ asset($data->headmaster_photo) }}" />
                                     @error('headmaster_photo')
+                                        <ul class="parsley-errors-list filled" id="parsley-id-5">
+                                            <li class="parsley-required">{{ $message }}</li>
+                                        </ul>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Foto Banner<span class="tx-danger">*</span></label>
+                                    <input type="file" accept="image/png, image/gif, image/jpeg"  class="dropify" name="banner" data-height="200"
+                                        data-default-file="{{ asset($data->banner) }}" />
+                                    @error('banner')
                                         <ul class="parsley-errors-list filled" id="parsley-id-5">
                                             <li class="parsley-required">{{ $message }}</li>
                                         </ul>

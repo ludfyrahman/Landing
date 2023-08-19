@@ -78,6 +78,7 @@ class SchoolProfileController extends Controller
             'name' => 'required',
             'email' => 'required',
             'logo' => 'nullable|image|mimes:jpeg,jpg,png,gif',
+            'banner' => 'nullable|image|mimes:jpeg,jpg,png,gif',
             'visi' => 'required',
             'misi' => 'required',
             'intro' => 'required|url',
@@ -88,6 +89,11 @@ class SchoolProfileController extends Controller
                 $fileType = $request->file('logo')->extension();
                 $name = Str::random(8) . '.' . $fileType;
                 $input['logo'] = Storage::putFileAs('logo', $request->file('logo'), $name);
+            }
+            if ($request->banner) {
+                $fileType = $request->file('banner')->extension();
+                $name = Str::random(8) . '.' . $fileType;
+                $input['banner'] = Storage::putFileAs('banner', $request->file('banner'), $name);
             }
 
             $input['name'] = $request->name;

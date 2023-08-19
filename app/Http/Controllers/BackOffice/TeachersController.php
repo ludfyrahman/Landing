@@ -54,7 +54,7 @@ class TeachersController extends Controller
         ]);
         try {
             $foto = null;
-            if($request->foto != null){
+            if($request->photo != null){
                 $file = $request->file('photo');
                 $file->storeAs('public/teacher/', $file->hashName());
                 $foto      = $file->hashName();

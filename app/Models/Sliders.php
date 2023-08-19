@@ -5,9 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Agenda extends Model
+class Sliders extends Model
 {
     use HasFactory;
-    protected $table = 'agenda';
-    protected $fillable = ['name', 'location','description','date', 'status'];
+    protected $table = 'slider';
+    protected $fillable = [
+        'name',
+        'image',
+        'link',
+    ];
+
+
 }

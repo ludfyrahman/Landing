@@ -41,12 +41,6 @@
                                     </nav><button type="button" class="as-menu-toggle d-inline-block d-lg-none"><i
                                             class="far fa-bars"></i></button>
                                 </div>
-                                <div class="col-auto d-none d-xxl-block">
-                                    <div class="header-button">
-                                        <a href="contact.html"
-                                            class="as-btn ml-25">Apply Now<i
-                                                class="fas fa-arrow-right ms-2"></i></a></div>
-                                </div>
                             </div>
                         </div>
                     </div>

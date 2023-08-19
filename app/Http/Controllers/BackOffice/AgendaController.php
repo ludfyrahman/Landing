@@ -29,8 +29,7 @@ class AgendaController extends Controller
             'name'          => '',
             'location'      => '',
             'description'   => '',
-            'start_date'    => '',
-            'end_date'      => '',
+            'date'          => '',
             'status'        => '',
             'type'          => 'create'
         ];
@@ -50,8 +49,7 @@ class AgendaController extends Controller
             'name'          => 'required',
             'location'      => 'required',
             'description'   => 'required',
-            'start_date'    => 'required|date_format:Y-m-d|before_or_equal:end_date',
-            'end_date'      => 'required|date_format:Y-m-d|after_or_equal:start_date',
+            'date'          => 'required|date_format:Y-m-d|before_or_equal:date',
             'status'        => 'required',
         ]);
         try {
@@ -59,8 +57,7 @@ class AgendaController extends Controller
                 'name'       => $request->name,
                 'location'   => $request->location,
                 'description'=> $request->description,
-                'start_date' => $request->start_date,
-                'end_date'   => $request->end_date,
+                'date'       => $request->date,
                 'status'     => $request->status,
             ]);
             return redirect('agenda')->with('success', 'Berhasil menambah data!');
@@ -106,8 +103,7 @@ class AgendaController extends Controller
             'name'          => 'required',
             'location'      => 'required',
             'description'   => 'required',
-            'start_date'    => 'required',
-            'end_date'      => 'required',
+            'date'          => 'required',
             'status'        => 'required',
         ]);
         try {
@@ -115,8 +111,7 @@ class AgendaController extends Controller
                 'name'      => $request->name,
                 'location'   => $request->location,
                 'description'=> $request->description,
-                'start_date' => $request->start_date,
-                'end_date'   => $request->end_date,
+                'date'      => $request->date,
                 'status'    => $request->status,
             ]);
             return redirect('agenda')->with('success', 'Berhasil mengubah data!');
@@ -140,4 +135,5 @@ class AgendaController extends Controller
             return back()->with('failed', 'Gagal menghapus data!' . $th->getMessage());
         }
     }
+    
 }
