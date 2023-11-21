@@ -112,7 +112,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Foto Kepala Sekolah<span class="tx-danger">*</span></label>
-                                    <input type="file" accept="image/png, image/gif, image/jpeg"  class="dropify" name="banner" data-height="200"
+                                    <input type="file" accept="image/png, image/gif, image/jpeg"  class="dropify" name="headmaster_photo" data-height="200"
                                         data-default-file="{{ asset($data->headmaster_photo) }}" />
                                     @error('headmaster_photo')
                                         <ul class="parsley-errors-list filled" id="parsley-id-5">
@@ -136,9 +136,9 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Sambutan Kepala Sekolah <span class="tx-danger">*</span></label>
-                                    <textarea rows="5" type="text" id="opening_speech_headmaster" opening_speech_headmaster="opening_speech_headmaster"
+                                    <textarea rows="5" type="text" id="opening_speech_headmaster" name="opening_speech_headmaster"
                                         class="form-control @error('opening_speech_headmaster') parsley-error @enderror"
-                                        placeholder="Nama Perusahaan">{{ $data->opening_speech_headmaster }}</textarea>
+                                        placeholder="Sambutan Kepala Sekolah">{{ $data->opening_speech_headmaster }}</textarea>
                                     @error('opening_speech_headmaster')
                                         <ul class="parsley-errors-list filled" id="parsley-id-5">
                                             <li class="parsley-required">{{ $message }}</li>

@@ -76,8 +76,9 @@ class SchoolProfileController extends Controller
 
         $request->validate([
             'name' => 'required',
-            'email' => 'required',
+            'opening_speech_headmaster' => 'required',
             'logo' => 'nullable|image|mimes:jpeg,jpg,png,gif',
+            'headmaster_photo' => 'nullable|image|mimes:jpeg,jpg,png,gif',
             'banner' => 'nullable|image|mimes:jpeg,jpg,png,gif',
             'visi' => 'required',
             'misi' => 'required',
@@ -95,10 +96,16 @@ class SchoolProfileController extends Controller
                 $name = Str::random(8) . '.' . $fileType;
                 $input['banner'] = Storage::putFileAs('banner', $request->file('banner'), $name);
             }
+            if ($request->headmaster_photo) {
+                $fileType = $request->file('headmaster_photo')->extension();
+                $name = Str::random(8) . '.' . $fileType;
+                $input['headmaster_photo'] = Storage::putFileAs('headmaster', $request->file('headmaster_photo'), $name);
+            }
 
             $input['name'] = $request->name;
             $input['intro'] = $request->intro;
-            $input['email'] = $request->emai ?? '-';
+            $input['email'] = $request->email ?? '-';
+            $input['opening_speech_headmaster'] = $request->opening_speech_headmaster ?? '-';
             $input['phone'] = $request->phone ?? '-';
             $input['address'] = $request->address ?? '-';
             $input['visi'] = $request->visi ?? '-';
